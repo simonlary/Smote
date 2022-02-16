@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"target": "es2021",
+		"module": "es2022",
+		"moduleResolution": "node",
+		"outDir": "out",
+		"strict": true,
+		"esModuleInterop": true,
+		"baseUrl": ".",
+	},
+	"include": [
+		"src/**/*"
+	]
+}

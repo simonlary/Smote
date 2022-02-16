@@ -1,0 +1,27 @@
+# -------------[ OS generated ]------------------------ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+tmp
+# -------------[ Sublime text generated ]-------------- #
+*.sublime-project
+*.sublime-workspace
+# -------------[ Build ]------------------------------- #
+build
+out
+# -------------[ VSCode generated ]-------------------- #
+jsconfig.json
+.vscode
+# -------------[ NodeJS ]------------------------------ #
+node_modules
+npm-debug.log
+# -------[Config file]-------- #
+bot.config
+# -------[Testing custom commands]-------- #
+audioCommands
+
+nodemon.json
