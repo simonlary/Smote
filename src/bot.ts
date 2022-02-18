@@ -1,6 +1,7 @@
 import { Client, CommandInteraction, Intents, Interaction, MessageEmbed } from "discord.js";
 import { Config } from "./config.js";
 import { Gods } from "./gods.js";
+import { registerCommands } from "./registerCommands.js";
 
 export class Bot {
     public static async create(config: Config) {
@@ -18,6 +19,10 @@ export class Bot {
         console.log("Logging in...");
         await client.login(config.token);
 
+        console.log("Registering commands...");
+        await registerCommands(client, config);
+
+        console.log("Bot started!");
         return bot;
     }
 
@@ -26,7 +31,6 @@ export class Bot {
         private readonly client: Client,
         private readonly gods: Gods
     ) {
-        this.client.on("ready", () => console.log("Ready!"));
         this.client.on("disconnect", () => { console.log("Disconnected"); });
         this.client.on("interactionCreate", this.onInteractionCreate);
     }
