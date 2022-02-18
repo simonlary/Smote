@@ -14,7 +14,6 @@ export async function registerCommands(client: Client, config: Config) {
         throw new Error("Couldn't get the application id.");
     }
 
-    console.log("Building commands...");
     const gods = new SlashCommandBuilder()
         .setName("gods")
         .setDescription("Get a list of random Smite gods.")
@@ -51,7 +50,6 @@ export async function registerCommands(client: Client, config: Config) {
         )
         .toJSON();
 
-    console.log("Registering commands...");
     const rest = new REST({ version: "9" }).setToken(config.token);
     if (config.debugGuilds.length === 0) {
         await rest.put(Routes.applicationCommands(applicationId), { body: [gods] });
