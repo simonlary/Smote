@@ -4,8 +4,8 @@ import { Routes } from "discord-api-types/rest/v9";
 import { Client } from "discord.js";
 import { Config } from "./config.js";
 
-function arrayToOptionChoices(array: string[]): [name: string, value: string][] {
-    return array.map(x => [x, x]);
+function arrayToOptionChoices(array: string[]) {
+    return array.map(x => ({ name: x, value: x }));
 }
 
 export async function registerCommands(client: Client, config: Config) {
@@ -28,25 +28,25 @@ export async function registerCommands(client: Client, config: Config) {
             option
                 .setName("class")
                 .setDescription("The class of gods you want random gods from.")
-                .setChoices(arrayToOptionChoices(["Assassin", "Guardian", "Hunter", "Mage", "Warrior"]))
+                .setChoices(...arrayToOptionChoices(["Assassin", "Guardian", "Hunter", "Mage", "Warrior"]))
         )
         .addStringOption(option =>
             option
                 .setName("damage")
                 .setDescription("The damage type of gods you want random gods from.")
-                .setChoices(arrayToOptionChoices(["Magical", "Physical"]))
+                .setChoices(...arrayToOptionChoices(["Magical", "Physical"]))
         )
         .addStringOption(option =>
             option
                 .setName("range")
                 .setDescription("The range of gods you want random gods from.")
-                .setChoices(arrayToOptionChoices(["Melee", "Ranged"]))
+                .setChoices(...arrayToOptionChoices(["Melee", "Ranged"]))
         )
         .addStringOption(option =>
             option
                 .setName("pantheon")
                 .setDescription("The pantheon of gods you want random gods from.")
-                .setChoices(arrayToOptionChoices(["Arthurian", "Babylonian", "Celtic", "Chinese", "Egyptian", "Great Old Ones", "Greek", "Hindu", "Japanese", "Mayan", "Norse", "Polynesian", "Roman", "Slavic", "Yoruba"]))
+                .setChoices(...arrayToOptionChoices(["Arthurian", "Babylonian", "Celtic", "Chinese", "Egyptian", "Great Old Ones", "Greek", "Hindu", "Japanese", "Mayan", "Norse", "Polynesian", "Roman", "Slavic", "Yoruba"]))
         )
         .toJSON();
 
