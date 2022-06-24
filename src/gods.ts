@@ -12,9 +12,8 @@ type Range = typeof Ranges[number];
 const Pantheons = ["Arthurian", "Babylonian", "Celtic", "Chinese", "Egyptian", "Great Old Ones", "Greek", "Hindu", "Japanese", "Mayan", "Norse", "Polynesian", "Roman", "Slavic", "Yoruba"] as const;
 type Pantheon = typeof Pantheons[number];
 
-// https://raw.githubusercontent.com/MajorVengeance/smite-random-god/master/gods.json
+// Originally based on : https://raw.githubusercontent.com/MajorVengeance/smite-random-god/master/gods.json
 interface God {
-    id: number,
     name: string,
     class: Class,
     damage: Damage,

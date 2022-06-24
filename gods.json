@@ -1,6 +1,5 @@
 [
 	{
-		"id": 1,
 		"name": "Artemis",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -8,7 +7,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 2,
 		"name": "Arachne",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -16,7 +14,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 3,
 		"name": "Hades",
 		"class": "Mage",
 		"damage": "Magical",
@@ -24,7 +21,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 4,
 		"name": "Zeus",
 		"class": "Mage",
 		"damage": "Magical",
@@ -32,7 +28,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 5,
 		"name": "Anhur",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -40,7 +35,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 6,
 		"name": "Anubis",
 		"class": "Mage",
 		"damage": "Magical",
@@ -48,7 +42,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 7,
 		"name": "Bastet",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -56,7 +49,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 8,
 		"name": "Ra",
 		"class": "Mage",
 		"damage": "Magical",
@@ -64,7 +56,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 9,
 		"name": "Sobek",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -72,7 +63,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 10,
 		"name": "Hel",
 		"class": "Mage",
 		"damage": "Magical",
@@ -80,7 +70,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 11,
 		"name": "Odin",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -88,7 +77,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 12,
 		"name": "Ymir",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -96,7 +84,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 13,
 		"name": "Kukulkan",
 		"class": "Mage",
 		"damage": "Magical",
@@ -104,7 +91,6 @@
 		"pantheon": "Mayan"
 	},
 	{
-		"id": 14,
 		"name": "Guan Yu",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -112,7 +98,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 15,
 		"name": "He Bo",
 		"class": "Mage",
 		"damage": "Magical",
@@ -120,7 +105,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 16,
 		"name": "Sun Wukong",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -128,15 +112,12 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 17,
-		"name": "Cupid",
 		"class": "Hunter",
 		"damage": "Physical",
 		"range": "Ranged",
 		"pantheon": "Roman"
 	},
 	{
-		"id": 18,
 		"name": "Agni",
 		"class": "Mage",
 		"damage": "Magical",
@@ -144,7 +125,6 @@
 		"pantheon": "Hindu"
 	},
 	{
-		"id": 19,
 		"name": "Bakasura",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -152,7 +132,6 @@
 		"pantheon": "Hindu"
 	},
 	{
-		"id": 20,
 		"name": "Kali",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -160,7 +139,6 @@
 		"pantheon": "Hindu"
 	},
 	{
-		"id": 21,
 		"name": "Vamana",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -168,7 +146,6 @@
 		"pantheon": "Hindu"
 	},
 	{
-		"id": 22,
 		"name": "Thor",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -176,7 +153,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 23,
 		"name": "Ares",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -184,7 +160,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 24,
 		"name": "Freya",
 		"class": "Mage",
 		"damage": "Magical",
@@ -192,7 +167,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 25,
 		"name": "Loki",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -200,7 +174,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 26,
 		"name": "Bacchus",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -208,7 +181,6 @@
 		"pantheon": "Roman"
 	},
 	{
-		"id": 27,
 		"name": "Xbalanque",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -216,7 +188,6 @@
 		"pantheon": "Mayan"
 	},
 	{
-		"id": 28,
 		"name": "Hercules",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -224,7 +195,6 @@
 		"pantheon": "Roman"
 	},
 	{
-		"id": 29,
 		"name": "Vulcan",
 		"class": "Mage",
 		"damage": "Magical",
@@ -232,7 +202,6 @@
 		"pantheon": "Roman"
 	},
 	{
-		"id": 30,
 		"name": "Neith",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -240,15 +209,12 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 31,
-		"name": "Poseidon",
 		"class": "Mage",
 		"damage": "Magical",
 		"range": "Ranged",
 		"pantheon": "Greek"
 	},
 	{
-		"id": 32,
 		"name": "Aphrodite",
 		"class": "Mage",
 		"damage": "Magical",
@@ -256,7 +222,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 33,
 		"name": "Apollo",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -264,7 +229,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 34,
 		"name": "Ne Zha",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -272,7 +236,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 35,
 		"name": "Fenrir",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -280,7 +243,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 36,
 		"name": "Isis",
 		"class": "Mage",
 		"damage": "Magical",
@@ -288,7 +250,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 37,
 		"name": "Athena",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -296,7 +257,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 38,
 		"name": "Hun Batz",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -304,7 +264,6 @@
 		"pantheon": "Mayan"
 	},
 	{
-		"id": 39,
 		"name": "Chronos",
 		"class": "Mage",
 		"damage": "Magical",
@@ -312,7 +271,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 40,
 		"name": "Chang'e",
 		"class": "Mage",
 		"damage": "Magical",
@@ -320,7 +278,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 41,
 		"name": "Tyr",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -328,7 +285,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 42,
 		"name": "Zhong Kui",
 		"class": "Mage",
 		"damage": "Magical",
@@ -336,7 +292,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 43,
 		"name": "Thanatos",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -344,7 +299,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 44,
 		"name": "Mercury",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -352,7 +306,6 @@
 		"pantheon": "Roman"
 	},
 	{
-		"id": 45,
 		"name": "Ah Muzen Cab",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -360,7 +313,6 @@
 		"pantheon": "Mayan"
 	},
 	{
-		"id": 46,
 		"name": "Nu Wa",
 		"class": "Mage",
 		"damage": "Magical",
@@ -368,7 +320,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 47,
 		"name": "Chaac",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -376,7 +327,6 @@
 		"pantheon": "Mayan"
 	},
 	{
-		"id": 48,
 		"name": "Geb",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -384,7 +334,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 49,
 		"name": "Nemesis",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -392,7 +341,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 50,
 		"name": "Scylla",
 		"class": "Mage",
 		"damage": "Magical",
@@ -400,7 +348,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 51,
 		"name": "Ullr",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -408,7 +355,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 52,
 		"name": "Kumbhakarna",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -416,7 +362,6 @@
 		"pantheon": "Hindu"
 	},
 	{
-		"id": 53,
 		"name": "Osiris",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -424,7 +369,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 54,
 		"name": "Janus",
 		"class": "Mage",
 		"damage": "Magical",
@@ -432,7 +376,6 @@
 		"pantheon": "Roman"
 	},
 	{
-		"id": 55,
 		"name": "Rama",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -440,7 +383,6 @@
 		"pantheon": "Hindu"
 	},
 	{
-		"id": 56,
 		"name": "Serqet",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -448,7 +390,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 57,
 		"name": "Cabrakan",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -456,7 +397,6 @@
 		"pantheon": "Mayan"
 	},
 	{
-		"id": 58,
 		"name": "Sylvanus",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -464,7 +404,6 @@
 		"pantheon": "Roman"
 	},
 	{
-		"id": 59,
 		"name": "Nox",
 		"class": "Mage",
 		"damage": "Magical",
@@ -472,7 +411,6 @@
 		"pantheon": "Roman"
 	},
 	{
-		"id": 60,
 		"name": "Ao Kuang",
 		"class": "Mage",
 		"damage": "Magical",
@@ -480,7 +418,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 61,
 		"name": "Awilix",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -488,7 +425,6 @@
 		"pantheon": "Mayan"
 	},
 	{
-		"id": 62,
 		"name": "Hou Yi",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -496,7 +432,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 63,
 		"name": "Bellona",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -504,7 +439,6 @@
 		"pantheon": "Roman"
 	},
 	{
-		"id": 64,
 		"name": "Medusa",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -512,7 +446,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 65,
 		"name": "Ah Puch",
 		"class": "Mage",
 		"damage": "Magical",
@@ -520,7 +453,6 @@
 		"pantheon": "Mayan"
 	},
 	{
-		"id": 66,
 		"name": "Ratatoskr",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -528,7 +460,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 67,
 		"name": "Ravana",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -536,7 +467,6 @@
 		"pantheon": "Hindu"
 	},
 	{
-		"id": 68,
 		"name": "Khepri",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -544,7 +474,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 69,
 		"name": "Xing Tian",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -552,7 +481,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 70,
 		"name": "Sol",
 		"class": "Mage",
 		"damage": "Magical",
@@ -560,7 +488,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 71,
 		"name": "Chiron",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -568,7 +495,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 72,
 		"name": "Amaterasu",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -576,7 +502,6 @@
 		"pantheon": "Japanese"
 	},
 	{
-		"id": 73,
 		"name": "Raijin",
 		"class": "Mage",
 		"damage": "Magical",
@@ -584,7 +509,6 @@
 		"pantheon": "Japanese"
 	},
 	{
-		"id": 74,
 		"name": "Skadi",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -592,7 +516,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 75,
 		"name": "Jing Wei",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -600,7 +523,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 76,
 		"name": "Susano",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -608,7 +530,6 @@
 		"pantheon": "Japanese"
 	},
 	{
-		"id": 77,
 		"name": "Fafnir",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -616,7 +537,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 78,
 		"name": "Erlang Shen",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -624,7 +544,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 79,
 		"name": "Terra",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -632,7 +551,6 @@
 		"pantheon": "Roman"
 	},
 	{
-		"id": 80,
 		"name": "Izanami",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -640,7 +558,6 @@
 		"pantheon": "Japanese"
 	},
 	{
-		"id": 81,
 		"name": "Camazotz",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -648,7 +565,6 @@
 		"pantheon": "Mayan"
 	},
 	{
-		"id": 82,
 		"name": "Thoth",
 		"class": "Mage",
 		"damage": "Magical",
@@ -656,7 +572,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 83,
 		"name": "Nike",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -664,7 +579,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 84,
 		"name": "The Morrigan",
 		"class": "Mage",
 		"damage": "Magical",
@@ -672,7 +586,6 @@
 		"pantheon": "Celtic"
 	},
 	{
-		"id": 85,
 		"name": "Kuzenbo",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -680,7 +593,6 @@
 		"pantheon": "Japanese"
 	},
 	{
-		"id": 86,
 		"name": "Cernunnos",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -688,7 +600,6 @@
 		"pantheon": "Celtic"
 	},
 	{
-		"id": 87,
 		"name": "Ganesha",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -696,7 +607,6 @@
 		"pantheon": "Hindu"
 	},
 	{
-		"id": 88,
 		"name": "Da Ji",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -704,7 +614,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 89,
 		"name": "Cu Chulainn",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -712,7 +621,6 @@
 		"pantheon": "Celtic"
 	},
 	{
-		"id": 90,
 		"name": "Artio",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -720,7 +628,6 @@
 		"pantheon": "Celtic"
 	},
 	{
-		"id": 91,
 		"name": "Hachiman",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -728,7 +635,6 @@
 		"pantheon": "Japanese"
 	},
 	{
-		"id": 92,
 		"name": "Discordia",
 		"class": "Mage",
 		"damage": "Magical",
@@ -736,7 +642,6 @@
 		"pantheon": "Roman"
 	},
 	{
-		"id": 93,
 		"name": "Cerberus",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -744,7 +649,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 94,
 		"name": "Achilles",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -752,7 +656,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 95,
 		"name": "Chernobog",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -760,7 +663,6 @@
 		"pantheon": "Slavic"
 	},
 	{
-		"id": 96,
 		"name": "Baron Samedi",
 		"class": "Mage",
 		"damage": "Magical",
@@ -768,7 +670,6 @@
 		"pantheon": "Slavic"
 	},
 	{
-		"id": 97,
 		"name": "Pele",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -776,7 +677,6 @@
 		"pantheon": "Polynesian"
 	},
 	{
-		"id": 98,
 		"name": "Hera",
 		"class": "Mage",
 		"damage": "Magical",
@@ -784,7 +684,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 99,
 		"name": "King Arthur",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -792,7 +691,6 @@
 		"pantheon": "Arthurian"
 	},
 	{
-		"id": 100,
 		"name": "Merlin",
 		"class": "Mage",
 		"damage": "Magical",
@@ -800,7 +698,6 @@
 		"pantheon": "Arthurian"
 	},
 	{
-		"id": 101,
 		"name": "Jormungandr",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -808,7 +705,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 102,
 		"name": "Set",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -816,7 +712,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 103,
 		"name": "Horus",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -824,7 +719,6 @@
 		"pantheon": "Egyptian"
 	},
 	{
-		"id": 104,
 		"name": "Olorun",
 		"class": "Mage",
 		"damage": "Magical",
@@ -832,7 +726,6 @@
 		"pantheon": "Yoruba"
 	},
 	{
-		"id": 105,
 		"name": "Persephone",
 		"class": "Mage",
 		"damage": "Magical",
@@ -840,7 +733,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 106,
 		"name": "Yemoja",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -848,7 +740,6 @@
 		"pantheon": "Yoruba"
 	},
 	{
-		"id": 107,
 		"name": "Heimdallr",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -856,7 +747,6 @@
 		"pantheon": "Norse"
 	},
 	{
-		"id": 108,
 		"name": "Mulan",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -864,7 +754,6 @@
 		"pantheon": "Chinese"
 	},
 	{
-		"id": 109,
 		"name": "Baba Yaga",
 		"class": "Mage",
 		"damage": "Magical",
@@ -872,7 +761,6 @@
 		"pantheon": "Slavic"
 	},
 	{
-		"id": 110,
 		"name": "Cthulhu",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -880,7 +768,6 @@
 		"pantheon": "Great Old Ones"
 	},
 	{
-		"id": 111,
 		"name": "Tsukuyomi",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -888,7 +775,6 @@
 		"pantheon": "Japanese"
 	},
 	{
-		"id": 112,
 		"name": "Danzaburou",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -896,7 +782,6 @@
 		"pantheon": "Japanese"
 	},
 	{
-		"id": 113,
 		"name": "Tiamat",
 		"class": "Mage",
 		"damage": "Magical",
@@ -904,7 +789,6 @@
 		"pantheon": "Babylonian"
 	},
 	{
-		"id": 114,
 		"name": "Gilgamesh",
 		"class": "Warrior",
 		"damage": "Physical",
@@ -912,7 +796,6 @@
 		"pantheon": "Babylonian"
 	},
 	{
-		"id": 115,
 		"name": "Morgan Le Fay",
 		"class": "Mage",
 		"damage": "Magical",
@@ -920,7 +803,6 @@
 		"pantheon": "Arthurian"
 	},
 	{
-		"id": 116,
 		"name": "Charybdis",
 		"class": "Hunter",
 		"damage": "Physical",
@@ -928,7 +810,6 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 117,
 		"name": "Cliodhna",
 		"class": "Assassin",
 		"damage": "Physical",
@@ -936,7 +817,6 @@
 		"pantheon": "Celtic"
 	},
 	{
-		"id": 118,
 		"name": "Atlas",
 		"class": "Guardian",
 		"damage": "Magical",
@@ -944,11 +824,24 @@
 		"pantheon": "Greek"
 	},
 	{
-		"id": 119,
 		"name": "Shiva",
 		"class": "Warrior",
 		"damage": "Physical",
 		"range": "Melee",
 		"pantheon": "Hindu"
+	},
+	{
+		"name": "Yu Huang",
+		"class": "Mage",
+		"damage": "Magical",
+		"range": "Ranged",
+		"pantheon": "Chinese"
+	},
+	{
+		"name": "Lancelot",
+		"class": "Assassin",
+		"damage": "Physical",
+		"range": "Melee",
+		"pantheon": "Arthurian"
 	}
 ]
