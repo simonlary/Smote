@@ -1,47 +1,10 @@
-import { readFile } from "fs/promises";
-
-const Classes = ["Assassin", "Guardian", "Hunter", "Mage", "Warrior"] as const;
-type Class = typeof Classes[number];
-
-const Damages = ["Magical", "Physical"] as const;
-type Damage = typeof Damages[number];
-
-const Ranges = ["Melee", "Ranged"] as const;
-type Range = typeof Ranges[number];
-
-const Pantheons = [
-  "Arthurian",
-  "Babylonian",
-  "Celtic",
-  "Chinese",
-  "Egyptian",
-  "Great Old Ones",
-  "Greek",
-  "Hindu",
-  "Japanese",
-  "Mayan",
-  "Norse",
-  "Polynesian",
-  "Roman",
-  "Slavic",
-  "Yoruba",
-] as const;
-type Pantheon = typeof Pantheons[number];
-
-// Originally based on : https://raw.githubusercontent.com/MajorVengeance/smite-random-god/master/gods.json
-interface God {
-  name: string;
-  class: Class;
-  damage: Damage;
-  range: Range;
-  pantheon: Pantheon;
-}
+import { getGods } from "./api/api.js";
+import { God } from "./api/types/gods.js";
 
 export class Gods {
   public static async load() {
-    const rawContent = await readFile("gods.json", "utf8");
-    const parsedContent = JSON.parse(rawContent) as God[];
-    return new Gods(parsedContent);
+    const gods = await getGods();
+    return new Gods(gods);
   }
 
   private constructor(private readonly gods: God[]) {}

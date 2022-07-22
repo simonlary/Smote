@@ -53,11 +53,12 @@ export async function registerCommands(client: Client, config: Config) {
             "Greek",
             "Hindu",
             "Japanese",
-            "Mayan",
+            "Maya",
             "Norse",
             "Polynesian",
             "Roman",
             "Slavic",
+            "Voodoo",
             "Yoruba",
           ])
         )
@@ -66,10 +67,10 @@ export async function registerCommands(client: Client, config: Config) {
 
   const rest = new REST({ version: "9" }).setToken(config.token);
   if (config.debugGuilds.length === 0) {
-    // await rest.put(Routes.applicationCommands(applicationId), { body: [gods] });
+    await rest.put(Routes.applicationCommands(applicationId), { body: [gods] });
   } else {
-    // for (const guildId of config.debugGuilds) {
-    //     await rest.put(Routes.applicationGuildCommands(applicationId, guildId), { body: [gods] });
-    // }
+    for (const guildId of config.debugGuilds) {
+      await rest.put(Routes.applicationGuildCommands(applicationId, guildId), { body: [gods] });
+    }
   }
 }
