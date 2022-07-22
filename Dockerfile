@@ -10,5 +10,4 @@ ENV NODE_ENV=production
 COPY package*.json ./
 RUN npm ci --production
 COPY --from=builder /app/out out
-COPY --from=builder /app/gods.json ./
 CMD [ "node", "out/index.js" ]
