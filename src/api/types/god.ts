@@ -29,6 +29,7 @@ export type Pantheon = typeof Pantheons[number];
 
 export interface God {
   name: string;
+  imageUrl: string;
   class: Class;
   damage: Damage;
   range: Range;

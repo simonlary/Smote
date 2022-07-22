@@ -1,5 +1,5 @@
 import { getGods } from "./api/api.js";
-import { God } from "./api/types/gods.js";
+import { God } from "./api/types/god.js";
 
 export class Gods {
   public static async load() {
@@ -26,9 +26,6 @@ export class Gods {
   }
 
   public getRandom(number: number) {
-    return this.gods
-      .sort(() => 0.5 - Math.random())
-      .slice(0, number)
-      .map((g) => g.name);
+    return this.gods.sort(() => 0.5 - Math.random()).slice(0, number);
   }
 }

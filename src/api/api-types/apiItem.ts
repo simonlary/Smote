@@ -26,7 +26,7 @@ enum YesNo {
 
 interface ItemDescription {
   Description: string | null;
-  MenuItems: MenuItem[];
+  Menuitems: MenuItem[];
   SecondaryDescription: string | null;
 }
 

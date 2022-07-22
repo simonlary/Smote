@@ -1,6 +1,7 @@
 import { Client, CommandInteraction, Intents, Interaction, MessageEmbed } from "discord.js";
 import { Config } from "./config.js";
 import { Gods } from "./gods.js";
+import { Items } from "./items.js";
 import { registerCommands } from "./registerCommands.js";
 
 export class Bot {
@@ -12,9 +13,10 @@ export class Bot {
 
     console.log("Loading Smite data...");
     const gods = await Gods.load();
+    const items = await Items.load();
 
     console.log("Creating bot...");
-    const bot = new Bot(config, client, gods);
+    const bot = new Bot(config, client, gods, items);
 
     console.log("Logging in...");
     await client.login(config.token);
@@ -26,7 +28,12 @@ export class Bot {
     return bot;
   }
 
-  private constructor(private readonly config: Config, private readonly client: Client, private readonly gods: Gods) {
+  private constructor(
+    private readonly config: Config,
+    private readonly client: Client,
+    private readonly gods: Gods,
+    private readonly items: Items
+  ) {
     this.client.on("disconnect", () => {
       console.log("Disconnected");
     });
@@ -52,6 +59,9 @@ export class Bot {
       switch (interaction.commandName) {
         case "gods":
           await this.executeGodsCommand(interaction);
+          break;
+        case "randombuild":
+          await this.executeRandomBuildCommand(interaction);
           break;
         default:
           console.warn(`Received an invalid command name to autocomplete : ${interaction.commandName}`);
@@ -93,9 +103,39 @@ export class Bot {
 
     const embed = new MessageEmbed()
       .setTitle("Smite Gods")
-      .setColor(0xedc10e)
-      .setDescription(result.map((god, index) => `${index + 1}. ${god}`).join("\n"));
+      .setColor(0xa37553)
+      .setDescription(this.formatInList(result));
 
     await interaction.reply({ embeds: [embed] });
   };
+
+  private executeRandomBuildCommand = async (interaction: CommandInteraction) => {
+    const [god] = this.gods.getRandom(1);
+
+    const starter = this.items.forClass(god.class).ofType("Item").ofTier(2).isStarter(true).getRandom(1)[0];
+    const glyph = this.items.forClass(god.class).ofType("Item").ofTier(4).isStarter(false).getRandom(1)[0];
+    const otherItems = this.items
+      .forClass(god.class)
+      .ofType("Item")
+      .ofTier(3)
+      .isStarter(false)
+      .except(glyph.parentId ?? 0)
+      .getRandom(4);
+    const items = [starter, ...otherItems, glyph];
+
+    const relics = this.items.ofType("Active").ofTier(4).getRandom(2);
+
+    const embed = new MessageEmbed()
+      .setColor(0xa37553)
+      .setTitle(god.name)
+      .setThumbnail(god.imageUrl)
+      .addField("Items", this.formatInList(items))
+      .addField("Relics", this.formatInList(relics));
+
+    await interaction.reply({ embeds: [embed] });
+  };
+
+  private formatInList(list: { name: string }[]) {
+    return list.map((obj, index) => `${index + 1}. ${obj.name}`).join("\n");
+  }
 }

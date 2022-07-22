@@ -4,8 +4,8 @@ import { Routes } from "discord-api-types/rest/v9";
 import { Client } from "discord.js";
 import { Config } from "./config.js";
 
-function arrayToOptionChoices(array: string[]) {
-  return array.map((x) => ({ name: x, value: x }));
+function arrayToOptionChoices<T extends string | number>(array: T[]) {
+  return array.map((x) => ({ name: x.toString(), value: x }));
 }
 
 export async function registerCommands(client: Client, config: Config) {
@@ -65,12 +65,17 @@ export async function registerCommands(client: Client, config: Config) {
     )
     .toJSON();
 
+  const randombuild = new SlashCommandBuilder()
+    .setName("randombuild")
+    .setDescription("Get a random build for a random Smite god.")
+    .toJSON();
+
   const rest = new REST({ version: "9" }).setToken(config.token);
   if (config.debugGuilds.length === 0) {
-    await rest.put(Routes.applicationCommands(applicationId), { body: [gods] });
+    await rest.put(Routes.applicationCommands(applicationId), { body: [gods, randombuild] });
   } else {
     for (const guildId of config.debugGuilds) {
-      await rest.put(Routes.applicationGuildCommands(applicationId, guildId), { body: [gods] });
+      await rest.put(Routes.applicationGuildCommands(applicationId, guildId), { body: [gods, randombuild] });
     }
   }
 }
