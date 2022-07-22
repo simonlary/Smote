@@ -112,10 +112,10 @@ export class Bot {
   private executeRandomBuildCommand = async (interaction: CommandInteraction) => {
     const [god] = this.gods.getRandom(1);
 
-    const starter = this.items.forClass(god.class).ofType("Item").ofTier(2).isStarter(true).getRandom(1)[0];
-    const glyph = this.items.forClass(god.class).ofType("Item").ofTier(4).isStarter(false).getRandom(1)[0];
+    const starter = this.items.forGod(god).ofType("Item").ofTier(2).isStarter(true).getRandom(1)[0];
+    const glyph = this.items.forGod(god).ofType("Item").ofTier(4).isStarter(false).getRandom(1)[0];
     const otherItems = this.items
-      .forClass(god.class)
+      .forGod(god)
       .ofType("Item")
       .ofTier(3)
       .isStarter(false)

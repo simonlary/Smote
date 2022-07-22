@@ -1,5 +1,5 @@
 import { getItems } from "./api/api.js";
-import { Class } from "./api/types/god.js";
+import { God } from "./api/types/god.js";
 import { Item } from "./api/types/item.js";
 
 export class Items {
@@ -18,8 +18,9 @@ export class Items {
     return new Items(this.items.filter((i) => i.tier === tier));
   }
 
-  public forClass(theClass: string) {
-    return new Items(this.items.filter((i) => i.validClasses.includes(theClass as Class)));
+  public forGod(god: God) {
+    const filterAcorns = god.name === "Ratatoskr" ? this.items : this.items.filter((i) => !i.name.includes("Acorn"));
+    return new Items(filterAcorns.filter((i) => i.validClasses.includes(god.class)));
   }
 
   public isStarter(isStarter: boolean) {
