@@ -9,6 +9,14 @@ export class Gods {
 
   private constructor(private readonly gods: God[]) {}
 
+  public withId(godId: number) {
+    const god = this.gods.find((g) => g.id === godId);
+    if (god == null) {
+      throw new Error(`God with id ${godId} doesn't exist.`);
+    }
+    return god;
+  }
+
   public withClass(theClass: string) {
     return new Gods(this.gods.filter((g) => g.class === theClass));
   }

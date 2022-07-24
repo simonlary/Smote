@@ -28,6 +28,7 @@ const Pantheons = [
 export type Pantheon = typeof Pantheons[number];
 
 export interface God {
+  id: number;
   name: string;
   imageUrl: string;
   class: Class;

@@ -12,6 +12,7 @@ export async function getGods(): Promise<God[]> {
 
 function apiGodToGod(apiGod: ApiGod): God {
   return {
+    id: apiGod.id,
     name: apiGod.name,
     imageUrl: apiGod.card,
     class: apiGod.role === "Mage, Ranged" ? "Mage" : apiGod.role,

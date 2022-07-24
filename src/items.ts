@@ -10,6 +10,14 @@ export class Items {
 
   private constructor(private readonly items: Item[]) {}
 
+  public withId(itemId: number) {
+    const item = this.items.find((i) => i.id === itemId);
+    if (item == null) {
+      throw new Error(`God with id ${itemId} doesn't exist.`);
+    }
+    return item;
+  }
+
   public ofType(type: string) {
     return new Items(this.items.filter((i) => i.type === type));
   }
