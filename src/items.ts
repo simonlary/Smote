@@ -27,6 +27,10 @@ export class Items {
     return new Items(this.items.filter((i) => i.isStarter === isStarter));
   }
 
+  public isEvolved(isEvolved: boolean) {
+    return new Items(this.items.filter((i) => i.name.startsWith("Evolved ") === isEvolved));
+  }
+
   public except(itemId: number) {
     return new Items(this.items.filter((i) => i.id !== itemId));
   }
