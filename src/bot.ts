@@ -132,7 +132,7 @@ export class Bot {
       .addField("Items", this.formatInList(items))
       .addField("Relics", this.formatInList(relics));
 
-    await interaction.reply({ embeds: [embed] });
+    await interaction.reply({ embeds: [embed], content: interaction.user.toString() });
   };
 
   private formatInList(list: { name: string }[]) {
