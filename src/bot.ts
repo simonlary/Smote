@@ -161,6 +161,11 @@ export class Bot {
   };
 
   private executeRerollSelectMenu = async (interaction: SelectMenuInteraction) => {
+    if (interaction.message.interaction?.user.id !== interaction.user.id) {
+      await interaction.reply({ content: "You can't reroll someone else's items!", ephemeral: true });
+      return;
+    }
+
     const params = new URLSearchParams(interaction.customId.replace("reroll", ""));
     const godId = params.get("god");
     const itemsIds = params.get("items")?.split(",");
