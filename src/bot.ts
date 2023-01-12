@@ -1,12 +1,12 @@
 import {
+  ActionRowBuilder,
+  ChatInputCommandInteraction,
   Client,
-  CommandInteraction,
-  Intents,
+  EmbedBuilder,
+  GatewayIntentBits,
   Interaction,
-  MessageActionRow,
-  MessageEmbed,
-  MessageSelectMenu,
-  SelectMenuInteraction,
+  StringSelectMenuBuilder,
+  StringSelectMenuInteraction,
 } from "discord.js";
 import { God } from "./api/types/god.js";
 import { Item } from "./api/types/item.js";
@@ -19,7 +19,7 @@ export class Bot {
   public static async create(config: Config) {
     console.log("Creating client...");
     const client = new Client({
-      intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES],
+      intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates],
     });
 
     console.log("Loading Smite data...");
@@ -57,16 +57,16 @@ export class Bot {
   }
 
   private onInteractionCreate = async (interaction: Interaction) => {
-    if (interaction.isCommand()) {
+    if (interaction.isChatInputCommand()) {
       this.onCommandInteraction(interaction);
-    } else if (interaction.isSelectMenu()) {
+    } else if (interaction.isStringSelectMenu()) {
       this.onSelectMenuInteraction(interaction);
     } else {
       console.warn(`Received an interaction that is not a command : ${interaction.type}`);
     }
   };
 
-  private onCommandInteraction = async (interaction: CommandInteraction) => {
+  private onCommandInteraction = async (interaction: ChatInputCommandInteraction) => {
     console.log(
       `User "${interaction.user.tag}" (${interaction.user.id}) executed command "${interaction.commandName}".`
     );
@@ -92,7 +92,7 @@ export class Bot {
     }
   };
 
-  private onSelectMenuInteraction = async (interaction: SelectMenuInteraction) => {
+  private onSelectMenuInteraction = async (interaction: StringSelectMenuInteraction) => {
     console.log(
       `User "${interaction.user.tag}" (${interaction.user.id}) executed selection "${interaction.customId}".`
     );
@@ -113,7 +113,7 @@ export class Bot {
     }
   };
 
-  private executeGodsCommand = async (interaction: CommandInteraction) => {
+  private executeGodsCommand = async (interaction: ChatInputCommandInteraction) => {
     const options = {
       number: interaction.options.getInteger("number", true),
       class: interaction.options.getString("class"),
@@ -138,7 +138,7 @@ export class Bot {
 
     const result = filtered.getRandom(options.number);
 
-    const embed = new MessageEmbed()
+    const embed = new EmbedBuilder()
       .setTitle("Smite Gods")
       .setColor(0xa37553)
       .setDescription(this.formatInList(result));
@@ -146,7 +146,7 @@ export class Bot {
     await interaction.reply({ embeds: [embed] });
   };
 
-  private executeRandomBuildCommand = async (interaction: CommandInteraction) => {
+  private executeRandomBuildCommand = async (interaction: ChatInputCommandInteraction) => {
     const [god] = this.gods.getRandom(1);
 
     const starter = this.getRandomStarter(god);
@@ -160,7 +160,7 @@ export class Bot {
     await interaction.reply({ ...reply, content: interaction.user.toString() });
   };
 
-  private executeRerollSelectMenu = async (interaction: SelectMenuInteraction) => {
+  private executeRerollSelectMenu = async (interaction: StringSelectMenuInteraction) => {
     if (interaction.message.interaction?.user.id !== interaction.user.id) {
       await interaction.reply({ content: "You can't reroll someone else's items!", ephemeral: true });
       return;
@@ -184,7 +184,7 @@ export class Bot {
       if (itemToRerollIndex === 0) {
         items[0] = this.getRandomStarter(god, items[0]);
       } else if (itemToRerollIndex === 5) {
-        items[5] = this.getRandomStarter(god, items[5]);
+        items[5] = this.getRandomGlyph(god, items[5]);
       } else {
         items[itemToRerollIndex] = this.getRandomItems(god, items[5], 1, ...items)[0];
       }
@@ -237,22 +237,24 @@ export class Bot {
   }
 
   private createRandomBuildReply(god: God, items: Item[], relics: Item[]) {
-    const embed = new MessageEmbed()
+    const embed = new EmbedBuilder()
       .setColor(0xa37553)
       .setTitle(god.name)
       .setThumbnail(god.imageUrl)
-      .addField("Items", this.formatInList(items))
-      .addField("Relics", this.formatInList(relics));
+      .addFields([
+        { name: "Items", value: this.formatInList(items) },
+        { name: "Relics", value: this.formatInList(relics) },
+      ]);
 
     const selectMenuId = `reroll?god=${god.id}&items=${items.map((i) => i.id).join(",")}&relics=${relics.map(
       (i) => i.id
     )}`;
     const selectMenuOptions = [...items, ...relics].map(this.itemToSelectMenuOption);
-    const selectMenu = new MessageSelectMenu()
+    const selectMenu = new StringSelectMenuBuilder()
       .setCustomId(selectMenuId)
       .setPlaceholder("Reroll Item")
       .addOptions(selectMenuOptions);
-    const row = new MessageActionRow().addComponents(selectMenu);
+    const row = new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(selectMenu);
     return { embeds: [embed], components: [row] };
   }
 

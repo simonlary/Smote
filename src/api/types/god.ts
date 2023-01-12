@@ -1,11 +1,11 @@
 const Classes = ["Assassin", "Guardian", "Hunter", "Mage", "Warrior"] as const;
-export type Class = typeof Classes[number];
+export type Class = (typeof Classes)[number];
 
 const Damages = ["Magical", "Physical"] as const;
-export type Damage = typeof Damages[number];
+export type Damage = (typeof Damages)[number];
 
 const Ranges = ["Melee", "Ranged"] as const;
-export type Range = typeof Ranges[number];
+export type Range = (typeof Ranges)[number];
 
 const Pantheons = [
   "Arthurian",
@@ -25,7 +25,7 @@ const Pantheons = [
   "Voodoo",
   "Yoruba",
 ] as const;
-export type Pantheon = typeof Pantheons[number];
+export type Pantheon = (typeof Pantheons)[number];
 
 export interface God {
   id: number;

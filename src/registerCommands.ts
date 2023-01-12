@@ -70,7 +70,7 @@ export async function registerCommands(client: Client, config: Config) {
     .setDescription("Get a random build for a random Smite god.")
     .toJSON();
 
-  const rest = new REST({ version: "9" }).setToken(config.token);
+  const rest = new REST({ version: "10" }).setToken(config.token);
   if (config.debugGuilds.length === 0) {
     await rest.put(Routes.applicationCommands(applicationId), { body: [gods, randombuild] });
   } else {
