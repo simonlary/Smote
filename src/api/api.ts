@@ -1,8 +1,8 @@
-import { Class, God } from "./types/god.js";
-import { ApiGod } from "./api-types/apiGod.js";
 import fetch from "node-fetch";
-import { Item } from "./types/item.js";
+import { ApiGod } from "./api-types/apiGod.js";
 import { ApiItem } from "./api-types/apiItem.js";
+import { Class, God } from "./types/god.js";
+import { Item } from "./types/item.js";
 
 export async function getGods(): Promise<God[]> {
   const response = await fetch("https://cms.smitegame.com/wp-json/smite-api/all-gods/1");

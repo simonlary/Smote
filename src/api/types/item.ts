@@ -1,4 +1,4 @@
-import { Class } from "./god";
+import { Class } from "./god.js";
 
 export interface Item {
   id: number;
