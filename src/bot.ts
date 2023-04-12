@@ -153,9 +153,10 @@ export class Bot {
     const glyph = this.getRandomGlyph(god);
     const otherItems = this.getRandomItems(god, glyph, 4);
     const items = [starter, ...otherItems, glyph];
+    const shard = this.getRandomShard();
     const relics = this.getRandomRelics(2);
 
-    const reply = this.createRandomBuildReply(god, items, relics);
+    const reply = this.createRandomBuildReply(god, items, shard, relics);
 
     await interaction.reply({ ...reply, content: interaction.user.toString() });
   };
@@ -169,13 +170,15 @@ export class Bot {
     const params = new URLSearchParams(interaction.customId.replace("reroll", ""));
     const godId = params.get("god");
     const itemsIds = params.get("items")?.split(",");
+    const shardId = params.get("shard");
     const relicsIds = params.get("relics")?.split(",");
-    if (godId == null || itemsIds == null || relicsIds == null) {
+    if (godId == null || itemsIds == null || shardId == null || relicsIds == null) {
       throw new Error(`Invalid reroll customId : ${interaction.customId}`);
     }
 
     const god = this.gods.withId(+godId);
     const items = itemsIds.map((id) => this.items.withId(+id));
+    let shard = this.items.withId(+shardId);
     const relics = relicsIds.map((id) => this.items.withId(+id));
 
     const itemToRerollIndex = items.findIndex((i) => i.id === +interaction.values[0]);
@@ -188,38 +191,47 @@ export class Bot {
       } else {
         items[itemToRerollIndex] = this.getRandomItems(god, items[5], 1, ...items)[0];
       }
+    } else if (shard.id === +interaction.values[0]) {
+      shard = this.getRandomShard(shard);
     } else if (relicToRerollIndex >= 0) {
       relics[relicToRerollIndex] = this.getRandomRelics(1, ...relics)[0];
     } else {
       throw new Error(`Invalid reroll item id : ${interaction.values[0]}`);
     }
 
-    const newReply = this.createRandomBuildReply(god, items, relics);
+    const newReply = this.createRandomBuildReply(god, items, shard, relics);
     await interaction.update(newReply);
   };
 
   private getRandomStarter(god: God, ...except: Item[]) {
-    let items = this.items;
-    for (const item of except) {
-      items = items.except(item.id);
-    }
-    return items.forGod(god).ofType("Item").ofTier(2).isStarter(true).isEvolved(false).getRandom(1)[0];
+    return this.items
+      .exceptAll(except)
+      .forGod(god)
+      .ofType("Item")
+      .ofTier(2)
+      .isStarter(true)
+      .isEvolved(false)
+      .getRandom(1)[0];
   }
 
   private getRandomGlyph(god: God, ...except: Item[]) {
-    let items = this.items;
-    for (const item of except) {
-      items = items.except(item.id);
-    }
-    return items.forGod(god).ofType("Item").ofTier(4).isStarter(false).isEvolved(false).getRandom(1)[0];
+    return this.items
+      .exceptAll(except)
+      .forGod(god)
+      .ofType("Item")
+      .ofTier(4)
+      .isStarter(false)
+      .isEvolved(false)
+      .getRandom(1)[0];
+  }
+
+  private getRandomShard(...except: Item[]) {
+    return this.items.exceptAll(except).ofType("Active").ofTier(2).getRandom(1)[0];
   }
 
   private getRandomItems(god: God, glyph: Item, number: number, ...except: Item[]) {
-    let items = this.items;
-    for (const item of except) {
-      items = items.except(item.id);
-    }
-    return items
+    return this.items
+      .exceptAll(except)
       .forGod(god)
       .ofType("Item")
       .ofTier(3)
@@ -229,27 +241,24 @@ export class Bot {
   }
 
   private getRandomRelics(number: number, ...except: Item[]) {
-    let items = this.items;
-    for (const item of except) {
-      items = items.except(item.id);
-    }
-    return items.ofType("Active").ofTier(4).getRandom(number);
+    return this.items.exceptAll(except).ofType("Active").ofTier(4).getRandom(number);
   }
 
-  private createRandomBuildReply(god: God, items: Item[], relics: Item[]) {
+  private createRandomBuildReply(god: God, items: Item[], shard: Item, relics: Item[]) {
     const embed = new EmbedBuilder()
       .setColor(0xa37553)
       .setTitle(god.name)
       .setThumbnail(god.imageUrl)
       .addFields([
         { name: "Items", value: this.formatInList(items) },
+        { name: "Shard", value: this.formatInList([shard]) },
         { name: "Relics", value: this.formatInList(relics) },
       ]);
 
-    const selectMenuId = `reroll?god=${god.id}&items=${items.map((i) => i.id).join(",")}&relics=${relics.map(
-      (i) => i.id
-    )}`;
-    const selectMenuOptions = [...items, ...relics].map(this.itemToSelectMenuOption);
+    const selectMenuId = `reroll?god=${god.id}&items=${items.map((i) => i.id).join(",")}&shard=${
+      shard.id
+    }&relics=${relics.map((i) => i.id)}`;
+    const selectMenuOptions = [...items, shard, ...relics].map(this.itemToSelectMenuOption);
     const selectMenu = new StringSelectMenuBuilder()
       .setCustomId(selectMenuId)
       .setPlaceholder("Reroll Item")

@@ -43,6 +43,10 @@ export class Items {
     return new Items(this.items.filter((i) => i.id !== itemId));
   }
 
+  public exceptAll(items: Item[]) {
+    return new Items(this.items.filter((i) => !items.includes(i)));
+  }
+
   public getRandom(number: number) {
     return this.items.sort(() => 0.5 - Math.random()).slice(0, number);
   }
