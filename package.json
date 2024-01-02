@@ -1,39 +1,32 @@
 {
-  "name": "smote",
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Armos-Games/Smote"
-  },
-  "main": "index.js",
-  "license": "MIT",
-  "type": "module",
-  "engines": {
-    "node": ">=16.9.0"
-  },
-  "scripts": {
-    "build": "tsc",
-    "deploy": "node ./out/index.js",
-    "start": "npm run build && npm run deploy",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
-    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
-  },
-  "dependencies": {
-    "discord.js": "^14.9.0",
-    "dotenv": "^16.0.3",
-    "node-fetch": "^3.3.1"
-  },
-  "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "@typescript-eslint/eslint-plugin": "^5.57.1",
-    "@typescript-eslint/parser": "^5.57.1",
-    "eslint": "^8.38.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-import-resolver-typescript": "^3.5.5",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.7",
-    "typescript": "^5.0.4"
-  }
+    "name": "smote",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/simonlary/Smote"
+    },
+    "main": "index.js",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "deploy": "node ./out/index.js",
+        "start": "npm run build && npm run deploy",
+        "lint": "eslint . --report-unused-disable-directives --max-warnings 0 && prettier --check .",
+        "lint:fix": "eslint --fix . --report-unused-disable-directives --max-warnings 0 && prettier --write ."
+    },
+    "dependencies": {
+        "discord.js": "^14.14.1",
+        "dotenv": "^16.3.1",
+        "node-fetch": "^3.3.2"
+    },
+    "devDependencies": {
+        "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+        "@typescript-eslint/eslint-plugin": "^6.17.0",
+        "@typescript-eslint/parser": "^6.17.0",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.1.0",
+        "prettier": "^3.1.1",
+        "typescript": "^5.3.3"
+    }
 }

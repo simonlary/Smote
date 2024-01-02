@@ -8,31 +8,31 @@ const Ranges = ["Melee", "Ranged"] as const;
 export type Range = (typeof Ranges)[number];
 
 const Pantheons = [
-  "Arthurian",
-  "Babylonian",
-  "Celtic",
-  "Chinese",
-  "Egyptian",
-  "Great Old Ones",
-  "Greek",
-  "Hindu",
-  "Japanese",
-  "Maya",
-  "Norse",
-  "Polynesian",
-  "Roman",
-  "Slavic",
-  "Voodoo",
-  "Yoruba",
+    "Arthurian",
+    "Babylonian",
+    "Celtic",
+    "Chinese",
+    "Egyptian",
+    "Great Old Ones",
+    "Greek",
+    "Hindu",
+    "Japanese",
+    "Maya",
+    "Norse",
+    "Polynesian",
+    "Roman",
+    "Slavic",
+    "Voodoo",
+    "Yoruba",
 ] as const;
 export type Pantheon = (typeof Pantheons)[number];
 
 export interface God {
-  id: number;
-  name: string;
-  imageUrl: string;
-  class: Class;
-  damage: Damage;
-  range: Range;
-  pantheon: Pantheon;
+    id: number;
+    name: string;
+    imageUrl: string;
+    class: Class;
+    damage: Damage;
+    range: Range;
+    pantheon: Pantheon;
 }

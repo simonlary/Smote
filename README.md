@@ -1,5 +1,3 @@
-# Smote: A Discord Smite Bot
+# Smote
 
-## Dependencies
-
-- Node.js >=16.9.0
+A Discord bot to generate random builds and pick random gods.
