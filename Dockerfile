@@ -1,11 +1,11 @@
-FROM node:16 AS builder
+FROM node:20 AS builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM node:16-alpine
+FROM node:20-alpine
 ENV NODE_ENV=production
 COPY package*.json ./
 RUN npm ci --production
