@@ -1,31 +1,26 @@
-const Classes = ["Assassin", "Guardian", "Hunter", "Mage", "Warrior"] as const;
-export type Class = (typeof Classes)[number];
+export type Class = "Assassin" | "Guardian" | "Hunter" | "Mage" | "Warrior";
 
-const Damages = ["Magical", "Physical"] as const;
-export type Damage = (typeof Damages)[number];
+export type Damage = "Magical" | "Physical";
 
-const Ranges = ["Melee", "Ranged"] as const;
-export type Range = (typeof Ranges)[number];
+export type Range = "Melee" | "Ranged";
 
-const Pantheons = [
-    "Arthurian",
-    "Babylonian",
-    "Celtic",
-    "Chinese",
-    "Egyptian",
-    "Great Old Ones",
-    "Greek",
-    "Hindu",
-    "Japanese",
-    "Maya",
-    "Norse",
-    "Polynesian",
-    "Roman",
-    "Slavic",
-    "Voodoo",
-    "Yoruba",
-] as const;
-export type Pantheon = (typeof Pantheons)[number];
+export type Pantheon =
+    | "Arthurian"
+    | "Babylonian"
+    | "Celtic"
+    | "Chinese"
+    | "Egyptian"
+    | "Great Old Ones"
+    | "Greek"
+    | "Hindu"
+    | "Japanese"
+    | "Maya"
+    | "Norse"
+    | "Polynesian"
+    | "Roman"
+    | "Slavic"
+    | "Voodoo"
+    | "Yoruba";
 
 export interface God {
     id: number;

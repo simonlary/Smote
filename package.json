@@ -12,21 +12,20 @@
         "build": "tsc",
         "deploy": "node ./out/index.js",
         "start": "npm run build && npm run deploy",
-        "lint": "eslint . --report-unused-disable-directives --max-warnings 0 && prettier --check .",
-        "lint:fix": "eslint --fix . --report-unused-disable-directives --max-warnings 0 && prettier --write ."
+        "lint": "eslint . && prettier --check .",
+        "lint:fix": "eslint --fix . && prettier --write ."
     },
     "dependencies": {
-        "discord.js": "^14.14.1",
-        "dotenv": "^16.3.1",
-        "node-fetch": "^3.3.2"
+        "discord.js": "^14.15.3",
+        "dotenv": "^16.4.5"
     },
     "devDependencies": {
+        "@eslint/js": "^9.8.0",
         "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-        "@typescript-eslint/eslint-plugin": "^6.17.0",
-        "@typescript-eslint/parser": "^6.17.0",
-        "eslint": "^8.56.0",
+        "eslint": "^9.8.0",
         "eslint-config-prettier": "^9.1.0",
-        "prettier": "^3.1.1",
-        "typescript": "^5.3.3"
+        "prettier": "^3.3.3",
+        "typescript": "^5.5.4",
+        "typescript-eslint": "^8.0.0"
     }
 }

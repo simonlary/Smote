@@ -27,7 +27,7 @@ export class Bot {
         const items = await Items.load();
 
         console.log("Creating bot...");
-        const bot = new Bot(config, client, gods, items);
+        const bot = new Bot(client, gods, items);
 
         console.log("Logging in...");
         await client.login(config.token);
@@ -40,7 +40,6 @@ export class Bot {
     }
 
     private constructor(
-        private readonly config: Config,
         private readonly client: Client,
         private readonly gods: Gods,
         private readonly items: Items,
