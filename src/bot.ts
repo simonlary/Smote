@@ -173,7 +173,7 @@ export class Bot {
     };
 
     private executeRerollSelectMenu = async (interaction: StringSelectMenuInteraction) => {
-        if (interaction.message.interaction?.user.id !== interaction.user.id) {
+        if (interaction.message.interactionMetadata?.user.id !== interaction.user.id) {
             await interaction.reply({ content: "You can't reroll someone else's items!", ephemeral: true });
             return;
         }
